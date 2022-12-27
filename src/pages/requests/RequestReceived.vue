@@ -34,6 +34,7 @@ export default {
   data() {
     return {
       isLoading: false,
+      error: null,
     };
   },
   computed: {
