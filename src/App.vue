@@ -13,6 +13,9 @@ export default {
   components: {
     TheHeader,
   },
+  mounted() {
+    console.log(process.env.VUE_APP_LOGIN);
+  },
 };
 </script>
 

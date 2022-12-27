@@ -66,15 +66,17 @@ export default {
         return;
       }
       this.isLoading = true;
+
+      const actionPayload = {
+        email: this.email,
+        password: this.password,
+      };
       try {
         // send http request
         if (this.mode === "login") {
-          //
+          await this.$store.dispatch("login", actionPayload);
         } else {
-          await this.$store.dispatch("signup", {
-            email: this.email,
-            password: this.password,
-          });
+          await this.$store.dispatch("signup", actionPayload);
         }
       } catch (err) {
         this.error = err.message || "Failed to aunthenticate, try later";
